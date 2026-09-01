@@ -8,6 +8,25 @@ mio holds the trace of your system: each requirement, the evidence that verifies
 
 A software system is that estuary: to get anywhere in it without running aground, you need the marks. You could survey the whole of it instead — drain it dry — but only at unreal cost (say, your entire token budget). mio keeps the marks on the navigable channel: a trace from intent, to evidence, to implementation.
 
+## Why mio exists
+
+Developing with agents, we stopped reading — first the code the agents write, then the tests — and by now even we who are building the system are losing hold of our understanding of it. The artifacts keep growing; the understanding does not feel like it is keeping up.
+
+Grasping the whole of a system has always mattered; that has not changed. But the feeling of holding the whole picture came from writing the code ourselves — and the writing has already been handed over; the understanding left with it. So we need another way of assembling understanding, one that does not pass through writing the code.
+
+mio is an attempt at that other way. It builds the trace of a system — from requirements, through the evidence that verifies them, down to the implementation — one graph that does more than help you grasp the whole. It makes two things possible.
+
+**Finding what is missing and what is extra.** Two axes — whether a requirement defines it, and whether an implementation exists — turn the system's completeness into a table:
+
+|  | Implementation exists | Implementation missing |
+| --- | --- | --- |
+| **Requirement defined** | Traced | A promise not yet kept |
+| **No requirement** | Excess — undocumented behavior, a latent requirement worth excavating | — |
+
+**Progressive disclosure, for agents and systems.** Follow the trace, and the slice that matters for a task can be cut out and handed over: a finite context loaded with only the right part, known to be right.
+
+The future mio aims at looks like this: a human reads the trace to grasp the whole of the requirements, finds what is missing and what is extra against the implementation, and asks an agent to close the gap — and the agent receives the intent of that work, which requirement it serves and which evidence it must satisfy, in the smallest context that carries it.
+
 ## The model
 
 mio stores exactly two kinds of material, and the distinction is the design: **judgments**, which cannot be recomputed, and **observations**, which always can be.
@@ -73,9 +92,9 @@ Traceability schemes that link design documents to code rot for a structural rea
 
 The same shape is why requirements that cannot be expressed in code still fit: an evidence node does not demand a test file. "The operator can restore a backup within 15 minutes" is realized by a rehearsal procedure; "p99 latency stays under 200 ms" by a production monitor. Both anchor, both trace.
 
-## Why
+## What the trace answers
 
-Neither an AI agent nor a human can hold a whole system in context. mio exists to make **progressive disclosure of a system** possible: given a requirement, a task, or a diff, serve the subgraph that matters and nothing else.
+Given a requirement, a task, or a diff, mio serves the subgraph that matters and nothing else.
 
 - **Downward** — from a requirement, reach exactly the code that realizes it. An agent gets a bounded working context instead of a repository dump.
 - **Upward** — from a code change, reach the evidence and requirements it touches. Review a diff in the vocabulary of requirements; translate a failing test into the requirement it violates.
