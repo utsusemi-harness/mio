@@ -130,3 +130,7 @@ Anything that wants a bounded view of a system can draw it through the channel. 
 - Living documentation for humans, generated per audience.
 - A maintainer's board: which intent is verified, which is dark.
 - Federation — multiple systems' graphs read together over MCP/REST into one map.
+
+## Related work
+
+mio owes its starting point to [TraceDev](https://arxiv.org/abs/2607.18886), a multi-agent framework that builds a traceability graph across requirements, design models, and code to ground agent-driven development. mio inherits the conviction that development should stand on requirement traceability, and departs twice: the graph faces outward — serving whoever must understand the system, not one pipeline's generation — and the middle layer is evidence rather than design models.
