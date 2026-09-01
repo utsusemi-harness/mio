@@ -1,4 +1,4 @@
-# mio
+![mio](assets/banner.png)
 
 mio holds the trace of your system: each requirement, the evidence that verifies it, and the implementation that evidence demonstrably covers — one graph, from intent all the way down. Ask it for exactly the part you need to understand; what has no trace surfaces on its own.
 

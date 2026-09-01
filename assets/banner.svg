@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="mio">
+  <rect width="1200" height="300" fill="#F4F0E6"/>
+  <g transform="translate(336 52.5) scale(3.05)">
+    <mask id="mio-carve-banner">
+      <rect x="-10" y="-10" width="84" height="84" fill="white"/>
+      <path d="M38 6 C38 19 26 23 26 32 C26 41 38 45 38 58"
+        fill="none" stroke="black" stroke-width="8" stroke-linecap="round"/>
+    </mask>
+    <rect x="8" y="8" width="48" height="48" rx="14" fill="#234B6E" mask="url(#mio-carve-banner)"/>
+  </g>
+  <text x="576" y="204" fill="#1E2B3A" font-family="Shippori Mincho, Yu Mincho, Hiragino Mincho ProN, Georgia, serif" font-size="150" letter-spacing="2">mio</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-label="mio">
+  <!-- mio mark. The flats, and the one channel carved through them.
+       Ground #F4F0E6, mark #234B6E. Square and full bleed: platforms round
+       the corners themselves. -->
+  <rect width="64" height="64" fill="#F4F0E6"/>
+  <mask id="mio-carve">
+    <rect width="64" height="64" fill="white"/>
+    <path d="M38 6 C38 19 26 23 26 32 C26 41 38 45 38 58"
+      fill="none" stroke="black" stroke-width="8" stroke-linecap="round"/>
+  </mask>
+  <rect x="8" y="8" width="48" height="48" rx="14" fill="#234B6E" mask="url(#mio-carve)"/>
+</svg>
