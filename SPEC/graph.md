@@ -188,21 +188,20 @@ sessions table.
 
 ## States
 
-States are computed, never stored. Subject side: present participle. Object side: past participle. Negation: `not`.
+States are computed, never stored. Negation: `not`.
+
+A `target` resolves when its artifact exists in the repository: the `path`, and the `symbol` or `lines` within it. A `uri` always resolves.
 
 | Node | State | Holds when |
 | --- | --- | --- |
-| any node with a target | resolving | the artifact exists at HEAD; `uri` is not checked |
-| evidence implementation | implementing | some implements edge has it as subject |
-| | exercising | some exercises edge has it as subject |
-| evidence | verifying | the requirement it verifies exists |
-| | implemented | some implements edge has it as object, and every such subject is resolving |
-| requirement | refining | the node it refines exists; the project alone is not refining |
-| | refined | some requirement refines it |
+| project | refined | some requirement refines it |
+| | traced | refined, and every requirement refining it is traced |
+| requirement | refined | some requirement refines it |
 | | verified | some evidence verifies it |
-| | traced | every evidence verifying it is implemented and every requirement refining it is traced |
-| implementation | exercised | some exercises edge has it as object |
-
-`check` reports the cause of a negative state.
-
-Artifact-caused changes only lower a state.
+| | traced | verified or refined, and every evidence verifying it is implemented, and every requirement refining it is traced |
+| evidence | implemented | some evidence implementation implements it, and every one that does is resolved |
+| external document | referenced | some node references it |
+| | resolved | its target resolves |
+| evidence implementation | resolved | its target resolves |
+| | implementing | it implements some evidence |
+| implementation | exercised | some evidence implementation exercises it |
