@@ -67,8 +67,7 @@ An edge is written in the frontmatter of its subject, under the edge's name.
 
 ### Examples
 
-<details>
-<summary>project</summary>
+#### project
 
 ```markdown
 ---
@@ -83,10 +82,7 @@ example-service
 Issues and validates session tokens for the storefront.
 ```
 
-</details>
-
-<details>
-<summary>requirement</summary>
+#### requirement
 
 ```markdown
 ---
@@ -105,10 +101,7 @@ A session token whose expiry has passed is rejected on every authenticated
 endpoint. No session is created and no refresh is issued.
 ```
 
-</details>
-
-<details>
-<summary>evidence</summary>
+#### evidence
 
 ```markdown
 ---
@@ -125,10 +118,7 @@ Send a request carrying a token whose exp is in the past. Expect 401, no
 session row, and no refresh token in the response.
 ```
 
-</details>
-
-<details>
-<summary>external document</summary>
+#### external document
 
 ```markdown
 ---
@@ -145,12 +135,7 @@ Security review, July 2026
 Section 3 covers session expiry.
 ```
 
-`target` is `file` or `uri`.
-
-</details>
-
-<details>
-<summary>evidence implementation</summary>
+#### evidence implementation
 
 ```markdown
 ---
@@ -181,10 +166,6 @@ rejects_expired_token
 Builds a token with exp = now - 1s, calls /me, asserts 401 and an empty
 sessions table.
 ```
-
-`range` is optional; without it the target is the whole file.
-
-</details>
 
 ## States
 
